@@ -16,7 +16,7 @@ describe('demo calculator tests', function(){
         browser.sleep(2000);
 
     });
-
+/**/ 
     /*
     it('subtraction test', function (){
 
