@@ -3,7 +3,7 @@ let login = function () {
     let email_input = element(by.name('email'));
     let password_input = element(by.name('password'));
     let connectButton = element(by.buttonText('Se connecter'));
-
+  
     this.get = function (url) {
         browser.get(url);
     }

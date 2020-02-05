@@ -6,8 +6,8 @@ describe('demo calculator tests', function () {
 
         login.get('http://integ.chambersign.apsdigit.lan/viseo/view/fr/connexion');
 
-        login.enterEmail('laib.cc@yopmail.com');
-        login.enterPassword('Azerty123;')
+        login.enterEmail('lamri123@yopmail.com');
+        login.enterPassword('Azerty1;')
         login.connectGo();
 
         browser.sleep(2000);
