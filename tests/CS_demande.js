@@ -1,15 +1,13 @@
 
-
-let login = require('../pages/CS_login_homepage');
-let orga = require('../pages/CS_orga_homepage');
-let certif = require('../pages/CS_certif_homepage');
-
+let login = require('../pages/01_CS_login_homepage');
+let orga = require('../pages/02_CS_orga_homepage');
+let certif = require('../pages/03_CS_certif_homepage');
+let personne = require('../pages/04_CS_personne_homepage');
 
 describe('ChamberSign - Integ', function () {
 
     var EC = protractor.ExpectedConditions;
 
-    /*
     it('Login', function () {
 
         login.get('http://integ.chambersign.apsdigit.lan/viseo/view/fr/connexion');
@@ -33,8 +31,8 @@ describe('ChamberSign - Integ', function () {
         orga.validGo();
 
     }); 
-    */
-    login.get('http://integ.chambersign.apsdigit.lan/viseo/view/fr/nouvelle-demande/-1/certificat');
+    
+    //login.get('http://integ.chambersign.apsdigit.lan/viseo/view/fr/nouvelle-demande/-1/certificat');
 
     it('Certificat', function () {
 
@@ -50,6 +48,7 @@ describe('ChamberSign - Integ', function () {
         // Vérif présence champ Support
         browser.wait(EC.presenceOf(element(by.xpath('//select[@name="supportNumeriqueId"]')), 5000));
 
+        // Support
         certif.selectSupport();
 
         // Vérif présence champ Lecteur
@@ -60,6 +59,7 @@ describe('ChamberSign - Integ', function () {
         // Vérif présence champ lieu de retrait
         browser.wait(EC.presenceOf(element(by.xpath('//input[@id="commune"]')), 5000));
 
+        // Lieu de retrait
         certif.enterCommune("breval");
         certif.selectCommune();
         
@@ -74,5 +74,30 @@ describe('ChamberSign - Integ', function () {
         certif.validGo();
 
     });
+
+    //login.get('http://integ.chambersign.apsdigit.lan/viseo/view/fr/nouvelle-demande/-1/personnes');
+    
+    it('Personne', function () {
+
+        // Vérif présence champ SIREN => Arrivée sur écran Organisation
+        browser.wait(EC.presenceOf(element(by.xpath('//strong[contains(.,"Description des personnes physiques")]')), 5000));
+
+        personne.saisieTitulaire("Lamri","LAIB","test@test.com", "Testeur", "Homologation", "0472241001", "0652146985")
+        
+        personne.presenceRL();
+
+        personne.saisieRL("LamriRL", "LAIBRL", "test_RL@test.com");
+        
+        personne.presenceDL();
+
+        personne.saisieDL("LamriDL", "LAIBDL", "test_DL@test.com");
+
+        browser.sleep(5000);
+
+        personne.validGo();
+
+    }); 
+
+
     
 });

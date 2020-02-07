@@ -1,5 +1,5 @@
-let login = require('../pages/CS_login_homepage');
-let orga = require('../pages/CS_orga_homepage');
+let login = require('../pages/01_CS_login_homepage');
+let orga = require('../pages/02_CS_orga_homepage');
 
 
 describe('ChamberSign - Integ', function () {
