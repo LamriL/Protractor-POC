@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites disabled="0" errors="0" failures="0" tests="1" time="9.635">
- <testsuite name="ChamberSign - Integ" timestamp="2020-02-07T16:54:24" hostname="localhost" time="9.635" errors="0" tests="1" skipped="0" disabled="0" failures="0">
-  <testcase classname="ChamberSign - Integ" name="Personne" time="9.633" />
+<testsuites disabled="0" errors="0" failures="0" tests="1" time="12.128">
+ <testsuite name="ChamberSign - Integ" timestamp="2020-02-10T15:37:44" hostname="localhost" time="12.128" errors="0" tests="1" skipped="0" disabled="0" failures="0">
+  <testcase classname="ChamberSign - Integ" name="PJ" time="12.126" />
  </testsuite>
 </testsuites>
